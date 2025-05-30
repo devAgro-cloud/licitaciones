@@ -1,6 +1,6 @@
 <x-card title="Información de Perfil" subtitle="Actualice su información personal y credenciales de acceso">
     <x-slot name="slot2">
-        <form>
+        <form id="profileForm">
             <div class="mb-3">
                 <label for="" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="name" aria-describedby="nameHelp">

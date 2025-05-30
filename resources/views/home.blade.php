@@ -13,23 +13,24 @@
 
         <div class="row">
             <div class="col-md-3 mb-4">
-                <x-card title="Tarjeta 1" subtitle="Subtítulo 1" icon="bi bi-file-earmark-text ms-2">
-                    Contenido de la tarjeta 1.
+                <x-card title="Licitaciones Activas" subtitle="Oportunidades disponibles para postular"
+                    icon="bi bi-file-earmark-text ms-2">
+                    2
                 </x-card>
             </div>
             <div class="col-md-3 mb-4">
-                <x-card title="Tarjeta 2">
-                    Contenido de la tarjeta 2.
+                <x-card title="En Evaluación" subtitle="Licitaciones en fase de evaluación" icon="bi bi-clipboard-check ms-2">
+                    2
                 </x-card>
             </div>
             <div class="col-md-3 mb-4">
-                <x-card title="Tarjeta 3">
-                    Contenido de la tarjeta 3.
+                <x-card title="Licitaciones Adjudicadas" subtitle="Licitaciones que han sido adjudicadas" icon="bi bi-award ms-2">
+                    3
                 </x-card>
             </div>
             <div class="col-md-3 mb-4">
-                <x-card title="Tarjeta 3">
-                    Contenido de la tarjeta 3.
+                <x-card title="Próximos a Vencer" subtitle="Licitaciones que cierran en menos de 7 días" icon="bi bi-clock ms-2">
+                    3
                 </x-card>
             </div>
         </div>

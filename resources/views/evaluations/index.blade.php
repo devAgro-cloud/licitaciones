@@ -14,7 +14,6 @@
 
         <div class="row">
             <div class="col-md-12 mb-4">
-
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
@@ -54,23 +53,87 @@
                                 <div
                                     class="card-body col-12 col-sm-3 d-flex flex-sm-column justify-content-between text-center">
                                     <div class="p-2">
-                                        <x-action-button title="Ver Detalles" class="btn-secondary"
-                                            icon="bi bi-file-earmark-text"></x-action-button>
+                                        <x-action-button href="{{ route('bids.show', 1) }}" title="Ver Detalles"
+                                            class="btn-secondary" icon="bi bi-file-earmark-text"></x-action-button>
                                     </div>
                                     <div class="p-2">
                                         <x-action-button title="Modificar" class="btn-primary"
-                                            icon="fa-regular fa-square-check"></x-action-button>
+                                            icon="fa-regular fa-square-check" data-bs-toggle="modal"
+                                            data-bs-target="#evaluationModal"></x-action-button>
                                     </div>
                                 </div>
 
                             </div>
                         </div>
                     </div>
-
                 </div>
+            </div>
+        </div>
+    </div>
 
+    {{-- Modal de Modificacion Evaluations --}}
+
+    <x-modal id="evaluationModal" dialogClass="modal-dialog-centered">
+        <div class="d-flex justify-content-between align-items-center">
+            <h1 class="modal-title fs-5">Evaluar Propuesta</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <p>Propuesta de <b>Company One</b></p>
+        <div class="d-flex">
+            <div class="pe-5">
+                <p class="m-0">Precio:</p>
+                <span class="fw-semibold">$190.00</span>
+            </div>
+            <div class="">
+                <p class="m-0">Fecha:</p>
+                <span class="fw-semibold">24/2/2023</span>
             </div>
         </div>
 
-    </div>
+        <div class="pt-3">
+            <p class="m-0">Descripción:</p>
+            <span class="fw-semibold">Complete IT equipment and 24/7 support package</span>
+        </div>
+
+        <hr />
+        <div class="mb-3">
+            <label for="scoreProposal" class="form-label fw-semibold">Puntuación (1-100)</label>
+            <div class="input-group">
+                <input type="number" class="form-control" id="scoreProposal" name="scoreProposal"
+                    aria-describedby="scoreProposal" name="score" min="1" max="100"
+                    placeholder="Ingrese puntaje"
+                    oninput="if(this.value.length > 3) this.value = this.value.slice(0,3); updateScoreLabel(this);">
+                <span class="input-group-text" id="scoreLabel"></span>
+
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="commentEvaluation" class="form-label fw-semibold">Comentarios</label>
+            <textarea class="form-control" placeholder="Descripción detallada de la licitación" id="commentEvaluation"
+                name="commentEvaluation" style="min-height: 100px"></textarea>
+        </div>
+        <div class="text-end">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Guardar Evaluación</button>
+        </div>
+    </x-modal>
+
+    <script>
+        function updateScoreLabel(input) {
+            let value = parseInt(input.value, 10);
+            let label = document.getElementById('scoreLabel');
+
+            if (isNaN(value)) {
+                label.textContent = '';
+            } else if (value >= 85) {
+                label.textContent = 'Excelente';
+            } else if (value >= 70) {
+                label.textContent = 'Bueno';
+            } else if (value >= 50) {
+                label.textContent = 'Regular';
+            } else {
+                label.textContent = 'Bajo';
+            }
+        }
+    </script>
 @endsection

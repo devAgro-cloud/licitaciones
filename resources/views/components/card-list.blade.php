@@ -28,7 +28,7 @@
             @endforeach
         </div>
         <div class="text-center">
-            <a href="#" class="card-link"> Ver Todas las licitaciones </a>
+            <a href="{{ route('bids') }}" class="card-link"> Ver Todas las licitaciones </a>
         </div>
     </div>
 </div>

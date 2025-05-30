@@ -6,19 +6,20 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class ActionButton extends Component
+class CardSection extends Component
 {
-    public $title;
+    public string $title;
+    public string $valueTitle;
     public $icon;
-    public $href;
-    /**
-     * Create a new component instance.
-     */
-    public function __construct($title, $icon = null, $href = null)
+    public string $subtitle;
+
+
+    public function __construct($title, $valueTitle = '', $icon = null, $subtitle = '')
     {
         $this->title = $title;
+        $this->valueTitle = $valueTitle;
         $this->icon = $icon;
-        $this->href = $href;
+        $this->subtitle = $subtitle;
     }
 
     /**
@@ -26,6 +27,6 @@ class ActionButton extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.action-button');
+        return view('components.card-section');
     }
 }

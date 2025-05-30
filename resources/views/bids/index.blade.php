@@ -5,7 +5,7 @@
 
         <div class="row mb-4">
             <x-header-row title="Licitaciones" icon="bi bi-plus-circle" buttonText="Nueva Licitacion"
-                subtitle="Gestione todas las licitaciones del sistema">
+                subtitle="Gestione todas las licitaciones del sistema" href="{{ route('bids.create') }}">
             </x-header-row>
         </div>
 
@@ -42,8 +42,8 @@
                         ['label' => 'Fecha de Inicio', 'value' => '2023-10-01'],
                         ['label' => 'Fecha de Cierre', 'value' => '2023-10-15'],
                         ['label' => 'Monto', 'value' => '$1000'],
-                    ]"
-                    buttonText="Ver Detalles"></x-action-card-info>
+                    ]" buttonText="Ver Detalles"
+                    href="{{ route('bids.show', 1) }}"></x-action-card-info>
             </div>
             <div class="col-md-3 md-4">
                 <x-action-card-info href="" title="Licitacion" statusColor="success" statusText="Activo"

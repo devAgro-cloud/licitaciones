@@ -23,7 +23,7 @@
             </div>
 
         </div>
-        <div class="row">
+        <div class="">
             <x-card title="Usuarios" valueTitle="(5)" subtitle="Lista de todos los usuarios registrados en el sistema">
                 <x-slot name="slot2">
                     <table id="usersTable" class="table table-striped table-bordered" style="width:100%">

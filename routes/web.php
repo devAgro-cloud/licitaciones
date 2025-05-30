@@ -22,6 +22,8 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::prefix('/bids')->group(function () {
     Route::get('/', [BidController::class, 'index'])->name('bids');
+    Route::get('/create', [BidController::class, 'create'])->name('bids.create');
+    Route::get('/show/{id}', [BidController::class, 'show'])->name('bids.show');
 });
 
 Route::prefix('/evaluations')->group(function () {
